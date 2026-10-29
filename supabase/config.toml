@@ -1,0 +1,4 @@
+project_id = "gsyqyguqyworjgjkaptz"
+
+[functions.my-training-sync]
+verify_jwt = false

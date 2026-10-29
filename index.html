@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="My Training">
+<title>My 4-Day Training</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="tb-in">
+    <div class="tb-l">
+      <a class="brand" id="brand" href="#/" aria-label="Home"><span class="brand-mark" id="brandMark"></span>My Training</a>
+      <button class="icon-btn" id="backBtn" aria-label="Back" hidden></button>
+    </div>
+    <div class="top-title" id="topTitle" aria-hidden="true"></div>
+    <div class="tb-r"><button class="lang-btn press" id="langBtn" type="button" aria-label="Switch language">FA</button><button class="icon-btn" id="settingsBtn" aria-label="Settings"></button></div>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<nav class="tabbar" id="tabbar" aria-label="Main">
+  <div class="tabbar-in">
+    <a class="tab press" href="#/" data-tab="#/" id="tabProg"><span id="icProg"></span>Program</a>
+    <a class="tab press" href="#/history" data-tab="#/history" id="tabHist"><span id="icHist"></span>History</a>
+  </div>
+</nav>
+
+<div class="sheet-root" id="sheetRoot" aria-hidden="true">
+  <div class="backdrop" data-act="close"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Details" tabindex="-1">
+    <div class="grab"><span></span></div>
+    <button class="sheet-back" data-act="sback" aria-label="Back" id="sheetBack" hidden></button>
+    <button class="sheet-close" data-act="close" aria-label="Close" id="sheetClose"></button>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+</div>
+
+<div class="timer" id="timer" role="timer" aria-live="polite">
+  <svg class="t-ring" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" class="t-bg"/><circle cx="20" cy="20" r="16" class="t-fg" id="tFg"/></svg>
+  <div class="t-info"><b id="tTime">0:00</b><span id="tLabel">Rest</span></div>
+  <button class="t-btn" data-t="-15" aria-label="Subtract 15 seconds">−15</button>
+  <button class="t-btn" data-t="15" aria-label="Add 15 seconds">+15</button>
+  <button class="t-btn t-x" data-t="x" aria-label="Dismiss timer" id="tX"></button>
+</div>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlgMsg">
+  <form method="dialog" class="dlg-in">
+    <p id="dlgMsg"></p>
+    <div class="dlg-btns">
+      <button value="cancel" class="dlg-c press">Cancel</button>
+      <button value="ok" class="dlg-ok press" id="dlgOk">OK</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+
+<noscript><p style="padding:24px;color:#fff">This app needs JavaScript enabled.</p></noscript>
+<script src="cloud-config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
